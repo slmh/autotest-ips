@@ -14,5 +14,6 @@
             "@wdio/mocha-framework",
             "expect-webdriverio"
         ],
+        "outDir": "./misc",
     }
 }

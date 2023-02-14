@@ -13,6 +13,7 @@
         "wdio-chromedriver-service": "^7.3.2"
     },
     "scripts": {
-        "wdio": "wdio run src/wdio.conf.ts"
+        "wdio": "wdio run src/wdio.conf.ts",
+        "ts-build": "tsc --build"
     }
 }
