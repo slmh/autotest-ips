@@ -10,7 +10,6 @@
             "autoAttachChildProcesses": true,
             "program": "${workspaceRoot}/node_modules/@wdio/cli/bin/wdio.js",
             "console": "integratedTerminal",
-            "envFile": "${workspaceRoot}/.env",
           }
     ]
 } 
