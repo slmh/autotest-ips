@@ -6,6 +6,5 @@ describe('presentation playe test', () => {
 
         await open()      
         await browser.pause(5000)
-
     })
 })
