@@ -1,6 +1,6 @@
 type catsAndDogs = {
-    color: string
-    age: number
+    color: string,
+    age: number,
 }
 
 const catPeach: catsAndDogs = {
