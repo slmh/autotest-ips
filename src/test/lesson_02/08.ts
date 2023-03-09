@@ -4,8 +4,9 @@
 function akaPromise() {
     return new Promise((resolve,reject) => {
         setTimeout(() => {
+            if 
             resolve('resolve')
-        }, 1000);
+        }, 100);
     })
 }
 
