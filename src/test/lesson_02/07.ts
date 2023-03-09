@@ -1,20 +1,14 @@
 // 	7.	Написать асинхронную функцию print(), которая будет печатать результат промиса из задания 6.
 
-function akaPromise() {
+function promiseForResolve(): Promise<string> {
     return new Promise((resolve) => {
-        setTimeout(() => {
-            resolve('resolve')
-        }, 1000);
+        setTimeout(() => resolve('resolve'), 1000)
     })
 }
 
-async function print() {
-    const data = await akaPromise()
+async function print(): Promise<void> {
+    const data: string = await promiseForResolve()
     console.log(data)
 }
 
-async function main() {
-    await print()
-}
-
-main()
+print()

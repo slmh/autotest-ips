@@ -3,47 +3,47 @@
 // Ошибки выводить в консоль текстом
 
 class Car {
-    private engine: boolean = false
-    private speed: number = 0
+    private isTurnEngine: boolean = false 
+    public speed: number = 0
 
-    constructor(engine: boolean, speed: number) {
-        this.engine = engine
+    constructor(isTurnEngine: boolean, speed: number) {
+        this.isTurnEngine = isTurnEngine
         this.speed = speed
     }
 
     public turnOn(): void {
-        this.engine = true
+        this.isTurnEngine = true
     }
 
     public turnOff() {
-        this.engine = false
+        this.isTurnEngine = false
         this.speed = 0
     }
 
-    public getState() {
-        if (this.engine && this.speed > 0) {
+    public getState() {   // simple
+        if (this.isTurnEngine && this.speed > 0) {
             console.log('Двигатель работает, машина едет на скорости ' + this.speed)
-        } else if (!this.engine) {
+        } else if (!this.isTurnEngine) {
             console.log('Машина заглушена')
         } else {
             console.log('Двигатель работает, машина стоит на месте')
         }
     }
 
-    public setSpeed(addSpeed: number) {
-        if (this.engine && (this.speed + addSpeed) <= 100) {
-            this.speed = this.speed + addSpeed
-        } else if (!this.engine) {
+    public setSpeed(speed: number) {
+        if (this.isTurnEngine && (this.speed + speed) <= 100) {
+            this.speed = this.speed + speed
+        } else if (!this.isTurnEngine) {
             console.log('Невозможно прибавить скорость: включите двигатель')
         } else {
             console.log(
                 'Невозможно прибавить скорость: максимальная скорость 100. Ваша скорость ' + this.speed + 
-                ', вы пытаетесь прибавить ' + addSpeed
+                ', вы пытаетесь прибавить ' + speed
             )
         }
     }
 }
-
+/*
 const carCabriolet: Car = new Car(false, 100)
 
 carCabriolet.getState()
@@ -56,16 +56,10 @@ carCabriolet.setSpeed(0)
 carCabriolet.getState()
 carCabriolet.turnOff()
 carCabriolet.getState()
+*/
+const carLadavesta: Car = new Car(true, 0)
 
-const carLadavesta: Car = new Car(true, 2)
-
 carLadavesta.getState()
-carLadavesta.setSpeed(50)
-carLadavesta.turnOn()
-carLadavesta.getState()
-carLadavesta.setSpeed(51)
-carLadavesta.getState()
-carLadavesta.setSpeed(0)
-carLadavesta.getState()
-carLadavesta.turnOff()
+carLadavesta.setSpeed(-2)
+console.log(carLadavesta.speed)
 carLadavesta.getState()
