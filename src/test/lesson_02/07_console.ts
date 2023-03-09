@@ -1,0 +1,1 @@
+(new Promise((res, rej) => {setTimeout(() => res('asdasdadsa'), 3000)})).then(console.log)

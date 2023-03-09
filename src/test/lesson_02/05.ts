@@ -5,14 +5,17 @@
 //    Задание: Создайте экземпляр класса. Выведите текущее состояние авто. Включите авто и выведите состояние повторно.
     
 class Car {
-    engine: boolean = false
-    turnOn() {
+    private engine: boolean = false
+
+    public turnOn() {
         this.engine = true
     }
-    turnOff() {
+
+    public turnOff() {
         this.engine = false
     }
-    getState() {
+
+    public getState() {
         this.engine === true 
         ? console.log('Двигатель работает')
         : console.log('Машина заглушена')
@@ -21,6 +24,7 @@ class Car {
 
 const car: Car = new Car()
 
-car.getState()
 car.turnOn()
+car.getState()
+car.turnOff()
 car.getState()
