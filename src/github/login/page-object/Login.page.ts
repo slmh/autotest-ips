@@ -22,13 +22,18 @@ class LoginPage {
         return this.browser.$('//*[@type="submit"]')
     }
 
+    private getLoginError() {
+        return this.browser.$('//*[@class="js-flash-alert"]')
+    }
+
     public async login(userEmail: string, userPassword: string): Promise<void>{
         await this.getLoginField().waitForDisplayed({
             timeoutMsg: 'Login field was not displayed'
         })
         await this.getLoginField().setValue(userEmail)
-        await this.getPasswordField().setValue(userEmail)
-        await this.getLoginButton().setValue(userEmail)
+        await this.getPasswordField().setValue(userPassword)
+        await this.getLoginButton().click()
+        await this.getLoginError().getText()
     }
 
     public async open(): Promise<void> {
