@@ -1,5 +1,5 @@
 import { EMAIL, LOGIN, PASSWORD } from "../../credential"
-import { randomLine } from "../function/randomLine";
+import { randomLine } from "./function/randomLine"
 
 describe('Login form test', async () => {
     beforeEach(async () => {
