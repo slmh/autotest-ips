@@ -1,5 +1,6 @@
 
 import {ChainablePromiseElement} from 'webdriverio'
+import {UserModel} from "../model/login.model"
 export {LoginPage}
 
 class LoginPage {
@@ -14,12 +15,12 @@ class LoginPage {
         return this.getError().getText()
     }
 
-    public async login(userEmail: string, userPassword: string): Promise<void>{
+    public async login(user: UserModel): Promise<void>{
         await this.getLoginField().waitForDisplayed({
             timeoutMsg: 'Login field was not displayed'
         })
-        await this.getLoginField().setValue(userEmail)
-        await this.getPasswordField().setValue(userPassword)
+        await this.getLoginField().setValue(user.login)
+        await this.getPasswordField().setValue(user.password)
         await this.getLoginButton().click()
     }
 
