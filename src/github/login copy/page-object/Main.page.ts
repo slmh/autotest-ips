@@ -21,11 +21,11 @@ class MainPage {
         await this.getUserAvatar().click()
     }
 
-    private getUserAvatar(): ChainablePromiseElement<Promise<WebdriverIO.Element>> {
+    private getUserAvatar(): ChainablePromiseElement<WebdriverIO.Element> {
         return this.browser.$('//summary/img')
     }
        
-    private getUserLogin(): ChainablePromiseElement<Promise<WebdriverIO.Element>> {
+    private getUserLogin(): ChainablePromiseElement<WebdriverIO.Element> {
         return this.browser.$('//details-menu//strong')
     }
 }

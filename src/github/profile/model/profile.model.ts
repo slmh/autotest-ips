@@ -1,4 +1,4 @@
-import { UserData } from "../data/login.data"
+import { UserData } from "../data/profile.data"
 
 type UserModel = {
     login: string,
@@ -12,7 +12,4 @@ function createUserModel(data: UserData): UserModel {
     }
 }
 
-export {
-    UserModel, 
-    createUserModel,
-}
+export {UserModel, createUserModel}

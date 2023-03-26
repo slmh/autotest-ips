@@ -28,19 +28,19 @@ class LoginPage {
         await this.browser.url(this.url)
     }
 
-    private getError() {
+    private getError(): ChainablePromiseElement<WebdriverIO.Element> {
         return this.browser.$('//*[@class="js-flash-alert"]')
     }
 
-    private getLoginField() {
+    private getLoginField(): ChainablePromiseElement<WebdriverIO.Element> {
         return this.browser.$('//*[@id="login_field"]')
     }
     
-    private getLoginButton(): ChainablePromiseElement<Promise<WebdriverIO.Element>> {
+    private getLoginButton(): ChainablePromiseElement<WebdriverIO.Element> {
         return this.browser.$('//*[@type="submit"]')
     }
 
-    private getPasswordField() {
+    private getPasswordField(): ChainablePromiseElement<WebdriverIO.Element> {
         return this.browser.$('//*[@id="password"]')
     }
 }
