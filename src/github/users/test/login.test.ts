@@ -1,7 +1,7 @@
 import {LoginPage} from '../page-object/Login.page'
 import {MainPage} from '../page-object/Main.page'
-import {UserModel, createUserModel} from "../model/login.model"
-import {userData1, userData2, userData3, userData4} from '../data/login.data'
+import {UserModel, createUserModel} from "../model/user.model"
+import {userData1, userData2, userData3, userData4} from '../data/user.data'
 
 describe('Login form test', async () => {
 
