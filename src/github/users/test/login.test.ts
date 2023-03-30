@@ -12,7 +12,7 @@ describe('Login form test', async () => {
         loginPage = new LoginPage(browser)
         mainPage = new MainPage(browser)
     })
-
+    
     beforeEach(async () => {
         await loginPage.open()
     })
