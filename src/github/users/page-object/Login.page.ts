@@ -1,6 +1,6 @@
 
 import {ChainablePromiseElement} from 'webdriverio'
-import {UserModel} from "../model/user.model"
+import {UserModel} from "../../iscommon/model/user.model"
 
 export class LoginPage {
     protected browser: WebdriverIO.Browser
