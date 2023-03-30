@@ -1,24 +1,21 @@
 import {LoginPage} from '../../users/page-object/Login.page'
-import {MainPage} from '../../users/page-object/Main.page'
+import {ProfilePage} from '../page-object/Profile.page'
 import {UserModel, createUserModel} from "../../iscommon/model/user.model"
 import {userDataLogin} from '../../iscommon/data/user.data'
 
-describe('Login', async () => {
+describe('Profile page tests', async () => {
+    const user: UserModel = createUserModel(userDataLogin)
 
     let loginPage: LoginPage
-    let mainPage: MainPage
 
     before(async () => {
         loginPage = new LoginPage(browser)
-        mainPage = new MainPage(browser)
-        
+        loginPage.open()
+        await loginPage.login(user)
     })
     
     beforeEach(async () => {
-        await loginPage.open()
-        const user: UserModel = createUserModel(userDataLogin)
-        await loginPage.login(user)
-        await mainPage.openUserMenu()
+        await ProfilePage.open()
     })
 
     it('it', async () => {
@@ -26,10 +23,6 @@ describe('Login', async () => {
     })
 
 
-
-    afterEach(async () => {
-        await browser.reloadSession()
-    })
 })
 
 

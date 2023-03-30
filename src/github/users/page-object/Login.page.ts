@@ -14,6 +14,8 @@ export class LoginPage {
         return this.getError().getText()
     }
 
+// расписать маленькие методы установыки пароля и т.д. 
+
     public async login(user: UserModel): Promise<void>{
         await this.getLoginField().waitForDisplayed({
             timeoutMsg: 'Login field was not displayed'

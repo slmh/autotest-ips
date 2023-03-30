@@ -41,6 +41,7 @@ describe('Login form test', async () => {
         const user: UserModel = createUserModel(userDataIncorrect)
         await loginPage.login(user)
         expect(await loginPage.getUserLoginText()).toContain('Incorrect username or password.')
+        // наличие элемента проверять
     })
 
     afterEach(async () => {

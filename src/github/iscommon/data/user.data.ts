@@ -1,5 +1,6 @@
 import { randomLine } from "./generic.data"
 
+// расширить тип данных 
 export type UserData = {
     login: string,
     password: string,
