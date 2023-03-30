@@ -5,22 +5,22 @@ export type UserData = {
     password: string,
 }
 
-export const userData1: UserData = {
+export const userDataLogin: UserData = {
     login: 'slmh',
     password: 'Murmansk999',
 }
 
-export const userData2: UserData = {
+export const userDataEmail: UserData = {
     login: 'salmaah22@gmail.com',
     password: 'Murmansk999',
 }
 
-export const userData3: UserData = {
+export const userDataEmpty: UserData = {
     login: '',
     password: '',
 }
 
-export const userData4: UserData = {
+export const userDataIncorrect: UserData = {
     login: randomLine(10),
     password: randomLine(10),
 }

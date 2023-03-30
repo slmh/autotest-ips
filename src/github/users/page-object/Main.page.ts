@@ -1,8 +1,7 @@
 
 import {ChainablePromiseElement} from 'webdriverio'
-export {MainPage}
 
-class MainPage {
+export class MainPage {
     protected browser: WebdriverIO.Browser
     protected url = 'https://github.com'
 
