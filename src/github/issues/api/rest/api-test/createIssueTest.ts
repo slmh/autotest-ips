@@ -1,6 +1,7 @@
 import {createIssueModel, IssueModel} from '../../../../iscommon/model/user.model.ts'
 import { LOGIN } from "../../../../../../credential"
 import { CreateIssueResponse } from "../../../../iscommon/data/api/api-service/IssueAPIService"
+import { REPO } from '../../../../iscommon/config/credentials'
 
 const fetch = require()
 
