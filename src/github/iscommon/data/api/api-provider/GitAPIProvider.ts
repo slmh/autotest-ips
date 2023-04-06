@@ -4,8 +4,10 @@ import {PERSONAL_TOKEN} from '../common/config/credentials'
 class GitAPIProvider {
     protected headers: AxiosRequestHeaders = {}
     protected personalToken = PERSONAL_TOKEN
+    protected isSuccessful: boolean
 
-    constructor() {
+    constructor(isSuccessful: boolean = true) {
+        this.isSuccessful = isSuccessful
         this.headers = {
             'Accept': 'application/vnd.github+json',
             'X-GitHub-Api-Version': '2022-11-28',
@@ -14,7 +16,13 @@ class GitAPIProvider {
     }
 
     public sendRequest<T>(config: AxiosRequestConfig): Promise<AxiosResponse<T>> {
+        if (this.isSuccessful) {
+            return axios(config)
+        } 
+        
         return axios(config)
+                .then(response => response)
+                .catch(error => error.response)
     }
 
     protected static configureRequest(
