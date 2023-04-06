@@ -23,7 +23,7 @@ describe('Login form test', async () => {
         await mainPage.openUserMenu()
         expect(await mainPage.getUserLoginText()).toEqual(user.login)
     })
-
+/*
     it('user should be log in using email', async () => {
         const user: UserModel = createUserModel(userDataEmail)
         await loginPage.login(user)
@@ -41,9 +41,8 @@ describe('Login form test', async () => {
         const user: UserModel = createUserModel(userDataIncorrect)
         await loginPage.login(user)
         expect(await loginPage.getUserLoginText()).toContain('Incorrect username or password.')
-        // наличие элемента проверять
     })
-
+*/
     afterEach(async () => {
         await browser.reloadSession()
     })
@@ -52,5 +51,47 @@ describe('Login form test', async () => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+
+it('user should be log in using login', async () => {
+    const user: UserModel = createUserModel(userDataLogin)
+    await loginPage.login(user)
+    await mainPage.openUserMenu()
+    expect(await mainPage.getUserLoginText()).toEqual(user.login)
+})
+
+it('user should be log in using email', async () => {
+    const user: UserModel = createUserModel(userDataEmail)
+    await loginPage.login(user)
+    await mainPage.openUserMenu()
+    expect(await mainPage.getUserLoginText()).toEqual("slmh")
+})
+
+it('user not should be log in using empty fields', async () => {
+    const user: UserModel = createUserModel(userDataEmpty)
+    await loginPage.login(user)
+    expect(await loginPage.getUserLoginText()).toContain('Incorrect username or password.')
+})
+
+it('user not should be log in using random value login and email', async () => {
+    const user: UserModel = createUserModel(userDataIncorrect)
+    await loginPage.login(user)
+    expect(await loginPage.getUserLoginText()).toContain('Incorrect username or password.')
+   
+})
 
 

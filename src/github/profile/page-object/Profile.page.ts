@@ -12,4 +12,5 @@ export class ProfilePage {
     public async open(): Promise<void> {
         await this.browser.url(this.url)
     }
+
 }

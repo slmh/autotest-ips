@@ -7,6 +7,7 @@ describe('Profile page tests', async () => {
     const user: UserModel = createUserModel(userDataLogin)
 
     let loginPage: LoginPage
+    let profilePage: ProfilePage
 
     before(async () => {
         loginPage = new LoginPage(browser)
@@ -15,18 +16,11 @@ describe('Profile page tests', async () => {
     })
     
     beforeEach(async () => {
-        await ProfilePage.open()
+        profilePage = new ProfilePage(browser)
+        await profilePage.open()
     })
 
     it('it', async () => {
 
     })
-
-
 })
-
-
-
-
-
-

@@ -14,16 +14,29 @@ export class LoginPage {
         return this.getError().getText()
     }
 
-// расписать маленькие методы установыки пароля и т.д. 
+// расписать маленькие методы установки пароля и т.д. 
 
-    public async login(user: UserModel): Promise<void>{
+    public async setLogin(user: UserModel): Promise<void> {
         await this.getLoginField().waitForDisplayed({
             timeoutMsg: 'Login field was not displayed'
         })
         await this.getLoginField().setValue(user.login)
+    }
+
+    public async setPassword(user: UserModel): Promise<void> {
         await this.getPasswordField().setValue(user.password)
+    }
+
+    public async clickLoginButton(user: UserModel): Promise<void> {
         await this.getLoginButton().click()
     }
+
+    public async login(user: UserModel): Promise<void>{
+        await this.setLogin(user)
+        await this.setPassword(user)
+        await this.clickLoginButton(user)
+    }
+
 
     public async open(): Promise<void> {
         await this.browser.url(this.url)
